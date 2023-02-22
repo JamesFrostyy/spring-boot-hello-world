@@ -1,7 +1,7 @@
 pipeline {
     agent any
 
-    }
+    
     stages {
         stage('Package Application') {
             steps {
@@ -29,4 +29,4 @@ pipeline {
         }
     }
     
-    
+}   
