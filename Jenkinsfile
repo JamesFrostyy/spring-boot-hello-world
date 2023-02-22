@@ -15,7 +15,7 @@ pipeline {
         stage('Build App Docker Images') {
             steps {
                 echo 'Building App Dev Images'
-                sh "docker build -t jamesfrostyy/sample"
+                sh "docker build -t jamesfrostyy/sample ."
                 sh 'docker push jamesfrostyy/sample'
             }
         }
