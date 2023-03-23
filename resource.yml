@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: hello-world
-          image: jamesfrostyy/sample
+          image: jamesfrostyy/cemayaz
           ports:
             - containerPort: 8080
 ---
