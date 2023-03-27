@@ -21,7 +21,7 @@ pipeline {
         stage('Prepare Tags for Docker Images') {
             steps {
                 echo 'Preparing Tags for Docker Images'
-                sh "docker tag jamesf ${ECR_REGISTRY}/${APP_REPO_NAME}"
+                sh "docker tag jamesfrostyy/exam ${ECR_REGISTRY}/${APP_REPO_NAME}"
             }
         }
           stage('Build ECR repo') {
