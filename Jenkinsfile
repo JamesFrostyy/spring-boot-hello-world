@@ -15,8 +15,8 @@ pipeline {
         stage('Build App Docker Images') {
             steps {
                 echo 'Building App Dev Images'
-                sh 'docker build -t jamesfrostyy/cemayaz .'
-                sh 'docker push jamesfrostyy/cemayaz:latest'
+                sh 'docker build -t jamesfrostyy/lesson .'
+                sh 'docker push jamesfrostyy/lesson:latest'
             }
         }
        
