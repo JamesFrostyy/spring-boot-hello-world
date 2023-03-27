@@ -14,7 +14,7 @@ pipeline {
             steps {
                 echo 'Packaging the app into jars with maven'
                 sh "./mvnw clean package"
-                sh "./jamestag.sh"
+                
             }
         }
           stage('Build ECR repo') {
@@ -39,6 +39,7 @@ pipeline {
                 echo 'Building App Dev Images'
                 sh 'docker build --force-rm -t jamesfrostyy/exam .'
                 sh 'aws ecr get-login-password --region ${AWS_REGION} | docker login --username AWS --password-stdin ${ECR_REGISTRY}'
+                sh "./jamestag.sh"
                 sh 'docker push "${JAMES}"'
             }
         }
