@@ -17,11 +17,11 @@ pipeline {
         }
           stage('Build ECR repo') {
             steps {
-                PATH="$PATH:/usr/local/bin"
-                APP_REPO_NAME="james/task"
-                AWS_REGION="us-east-1"
+                sh 'PATH="$PATH:/usr/local/bin"'
+                sh 'APP_REPO_NAME="james/task"'
+                sh 'AWS_REGION="us-east-1"'
 
-                sh'aws ecr describe-repositories --region ${AWS_REGION} --repository-name ${APP_REPO_NAME} || \
+                sh 'aws ecr describe-repositories --region ${AWS_REGION} --repository-name ${APP_REPO_NAME} || \
                 aws ecr create-repository \
                 --repository-name ${APP_REPO_NAME} \
                 --image-scanning-configuration scanOnPush=false \
