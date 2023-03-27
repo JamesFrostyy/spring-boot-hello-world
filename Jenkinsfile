@@ -14,7 +14,7 @@ pipeline {
             steps {
                 echo 'Packaging the app into jars with maven'
                 sh "./mvnw clean package"
-                sh '. ./jamestag.sh'
+                sh "./jamestag.sh"
             }
         }
           stage('Build ECR repo') {
