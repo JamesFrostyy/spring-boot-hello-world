@@ -16,7 +16,7 @@ pipeline {
             steps {
                 echo 'Building App Dev Images'
                 sh 'docker build -t jamesfrostyy/cemayaz .'
-                sh 'docker push jamesfrostyy/cemayaz'
+                sh 'docker push jamesfrostyy/cemayaz:latest'
             }
         }
        
